@@ -1,6 +1,6 @@
 # Premier Schools Exhibition – Landing Page
 
-**22nd Edition** | Gurugram, 2–3 August 2025
+**22nd Edition** 
 
 A production-ready, pixel-perfect landing page built with semantic HTML5, custom CSS3, and vanilla JavaScript. No frameworks, no dependencies.
 
@@ -88,13 +88,8 @@ Landing-Page/
 
 1. Open `index.html` with **Live Server** (VS Code extension)
    - Right-click `index.html` → *Open with Live Server*
-2. Or serve locally:
-   ```bash
-   npx serve .
-   # or
-   python3 -m http.server 3000
-   ```
-3. Navigate to `http://localhost:5500` (or your server port)
+
+2. Navigate to `http://localhost:5500` (or your server port)
 
 > **Note:** The logo images are loaded from Wikipedia/Unsplash URLs. For production, replace with local assets in `/assets/logos/` and `/assets/images/`.
 

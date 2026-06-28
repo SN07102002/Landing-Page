@@ -1,0 +1,266 @@
+/* ============================================================
+   animations.css – Premier Schools Exhibition
+   All animations, transitions, and motion effects
+   Respects prefers-reduced-motion
+   ============================================================ */
+
+/* ── Keyframes ──────────────────────────────────────────────── */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Logo slider: left-to-right (content moves left) */
+@keyframes scrollLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Logo slider: right-to-left (content moves right) */
+@keyframes scrollRight {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Pulse glow for CTA buttons */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.3); }
+  50%       { box-shadow: 0 0 0 8px rgba(124, 58, 237, 0); }
+}
+
+/* Shimmer for logo cards on hover */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Float animation for hero images */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes scrollUp {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* ── Page Load Entry Animations ─────────────────────────────── */
+
+/* Hero left column */
+.hero__heading {
+  animation: slideInLeft 0.7s ease 0.1s both;
+}
+
+.hero__subheading {
+  animation: slideInLeft 0.7s ease 0.2s both;
+}
+
+.hero__event-info {
+  animation: fadeInUp 0.7s ease 0.35s both;
+}
+
+/* Hero images */
+.hero__images {
+  animation: fadeIn 0.8s ease 0.2s both;
+}
+
+/* Enquiry form */
+.enquiry-form {
+  animation: slideInRight 0.7s ease 0.2s both;
+}
+
+/* Stats – stagger */
+.stats__item:nth-child(1) { animation: fadeInUp 0.6s ease 0.1s both; }
+.stats__item:nth-child(2) { animation: fadeInUp 0.6s ease 0.2s both; }
+.stats__item:nth-child(3) { animation: fadeInUp 0.6s ease 0.3s both; }
+.stats__item:nth-child(4) { animation: fadeInUp 0.6s ease 0.4s both; }
+
+/* Scroll-triggered (added via JS) */
+.is-visible {
+  animation: fadeInUp 0.6s ease both;
+}
+
+/* ── Logo Scroll Animations ──────────────────────────────────── */
+
+/* Row 1: scrolls left */
+.logos-track[data-direction="left"] .logos-track__inner {
+  animation: scrollLeft 30s linear infinite;
+}
+
+/* Row 2: scrolls right */
+.logos-track[data-direction="right"] .logos-track__inner {
+  animation: scrollRight 30s linear infinite;
+}
+
+/* Pause on hover or focus within */
+.logos-track:hover .logos-track__inner,
+.logos-track:focus-within .logos-track__inner {
+  animation-play-state: paused;
+}
+
+/* ── Card Hover Effects ──────────────────────────────────────── */
+
+.school-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.school-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+}
+
+.exhibit-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exhibit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+}
+
+/* ── Button Hover Effects ───────────────────────────────────── */
+
+.btn--register:hover,
+.btn--submit:hover,
+.btn--dark:hover {
+  transition: all 0.25s ease;
+}
+
+/* Arrow rotation on hover */
+.btn:hover .btn__arrow,
+.btn:hover .btn__arrow-box {
+  transform: rotate(0deg);
+  transition: transform 0.25s ease;
+}
+
+/* ── Logo Card Hover ─────────────────────────────────────────── */
+
+.logo-card {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.logo-card:hover {
+  box-shadow: 0 8px 24px rgba(75,42,156,0.15);
+  transform: translateY(-3px);
+}
+
+/* ── Dot Transition ──────────────────────────────────────────── */
+
+.dot {
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+/* ── Exhibition nav btn ──────────────────────────────────────── */
+
+.exhibition__nav-btn {
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.exhibition__nav-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ── Footer social icons ─────────────────────────────────────── */
+
+.footer__social-link {
+  transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease, transform 0.2s ease;
+}
+
+.footer__social-link:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Scroll-triggered reveal ─────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── prefers-reduced-motion ──────────────────────────────────── */
+/* All motion is disabled for users who prefer reduced motion    */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Logo sliders */
+  .logos-track__inner {
+    animation: none !important;
+  }
+
+  /* Hero image column scroll */
+  .hero__images-track {
+    animation: none !important;
+  }
+
+  .school-card:hover,
+  .exhibit-card:hover,
+  .logo-card:hover {
+    transform: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
